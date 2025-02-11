@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="bg-gradient-to-r py-4 from-blue-950 to-red-800 shadow-lg"
+      className="py-4 bg-[#356BBB] shadow-lg"
       //   variants={aboutVariants}
       //   initial="hidden"
       //   animate="visible"

@@ -1,11 +1,11 @@
 import {
-    Droplet,
-    ShieldAlert,
-    Stethoscope,
-    Sun,
-    Umbrella,
-    Utensils,
-    X,
+  Droplet,
+  ShieldAlert,
+  Stethoscope,
+  Sun,
+  Umbrella,
+  Utensils,
+  X,
 } from "lucide-react";
   
   const samplePdfPath = "/pdf/Journal-PDF.pdf";
@@ -156,7 +156,7 @@ import {
   
   export const about = [
     {
-      title: "Field of Concentration",
+      title: "Concentration",
       content:
         "Acne Problems\nAllergic conjunctivitis\nAllergic Rhinitis\nBacterial Skin Infection Treatment\nChronic Skin Allergy\nDimple Creation\nDisorder of Sexual Differentiation\nFemale Sexual Dysfunction\nSun Burn Treatment\nNail Diseases Treatment",
       pos: "end",

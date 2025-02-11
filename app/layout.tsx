@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Baloo_Da_2, Geist, Geist_Mono } from "next/font/google";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -11,6 +12,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const balooDa2 = Baloo_Da_2({
+  subsets: ["bengali"], // Specify the Bangla subset
+  weight: ["400", "500", "600", "700", "800"], // Use desired font weights
 });
 
 export const metadata: Metadata = {
@@ -27,10 +33,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased ${balooDa2.className}`}
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
