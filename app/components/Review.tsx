@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { reviews } from "@/app/utils/data";
 import {
   Carousel,
@@ -8,31 +8,32 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// import Autoplay from "embla-carousel-autoplay";
-// import { motion } from "motion/react";
+import Autoplay from "embla-carousel-autoplay";
+import { motion } from "motion/react";
 import { FaQuoteRight } from "react-icons/fa";
 
-// import { reviewVariants } from "../motion";
+import React from "react";
+import { reviewVariants } from "../motion";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Review = ({ useWhileInView }: any) => {
-  //   const plugin = React.useRef(
-  //     Autoplay({ delay: 2500, stopOnInteraction: true })
-  //   );
+  const plugin = React.useRef(
+    Autoplay({ delay: 2500, stopOnInteraction: true })
+  );
   return (
-    <div
-      //   variants={reviewVariants}
-      //   initial="hidden"
-      //   {...(useWhileInView
-      //     ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
-      //     : { animate: "visible" })}
-      className="space-y-4 "
+    <motion.div
+      variants={reviewVariants}
+      initial="hidden"
+      {...(useWhileInView
+        ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
+        : { animate: "visible" })}
+      className="space-y-4 pb-5"
     >
       <Carousel
-        className="border p-12 rounded-xl bg-[#F7F3ED] shadow-lg"
-        // plugins={[plugin.current]}
-        // onMouseEnter={plugin.current.stop}
-        // onMouseLeave={plugin.current.reset}
+        className="border p-12 rounded-3xl bg-[#F7F3ED] shadow-lg"
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
         opts={{
           align: "start",
           loop: true,
@@ -57,7 +58,7 @@ const Review = ({ useWhileInView }: any) => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </div>
+    </motion.div>
   );
 };
 

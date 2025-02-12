@@ -1,42 +1,75 @@
-// "use client";
-// import { motion } from "motion/react";
+"use client";
+import { motion } from "motion/react";
 import Image from "next/image";
-// import { introVariants } from "../motion";
+import "../../app/main.css";
+import { introVariants } from "../motion";
 import { introInfo } from "../utils/data";
 
 const Intro = () => {
   return (
-    <div
-      //   variants={introVariants}
+    <motion.div
+      className="relative overflow-hidden z-10 bg-orange-100 rounded-2xl drop-shadow-xl mb-7"
+      variants={introVariants}
       id="intro"
-      //   initial="hidden"
-      //   animate="visible"
-      className="flex flex-col-reverse items-center justify-center md:flex-row"
+      initial="hidden"
+      animate="visible"
     >
-      <div className="m-2 p-5 md:p-8 flex flex-col items-center drop-shadow-2xl rounded-3xl">
-        <div>
-          <h2 className="mb-2 font-bold text-red-600 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
-            {introInfo.name}
-          </h2>
-          <h2 className="mb-1 text-blue-600 text-base font-medium lg:text-baslge xl:text-xl 2xl:text-2xl">
-            {introInfo.headline}
-          </h2>
-          <div className="flex flex-col gap-1 text-sm font-light lg:text-base xl:text-lg 2xl:text-xl">
-            <p>{introInfo.desgnation}</p>
-            <p>{introInfo.place}</p>
+      <div className="container mx-auto">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-7 mb-5 md:mb-0 ">
+          <div className="flex flex-col items-center">
+            <div className="space-y-2 w-5/6 pt-2">
+              <h2 className="text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                {introInfo.name}
+              </h2>
+              <h3 className="text-base sm:text-lg md:text-base lg:text-xl text-blue-600 relative">
+                {introInfo.headline}
+                {/* <div className="absolute bottom-1 left-0 w-full h-1 bg-blue-600/20 rounded-full" /> */}
+              </h3>
+              <p className="text-base lg:text-lg text-gray-700">
+                {introInfo.desgnation}
+              </p>
+              <p className="text-base lg:text-lg text-gray-700">
+                {introInfo.place}
+              </p>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 relative">
+            <figure className="relative z-10">
+              <Image
+                src={introInfo.imgURL || "/placeholder.svg"}
+                alt={introInfo.name}
+                priority={true}
+                width={600}
+                height={600}
+                className="object-contain"
+              />
+            </figure>
           </div>
         </div>
       </div>
-      <figure className="object-cover overflow-hidden rounded-2xl shadow-2xl md:relative">
-        <Image
-          src={introInfo.imgURL}
-          alt={introInfo.name}
-          priority={true} // {false} | {true}
-          height={400}
-          width={400}
-        />
-      </figure>
-    </div>
+      {/* bg-[#356BBB] */}
+      {/* Stats */}
+      <div className="bg-gradient-to-r from-orange-400 to-blue-400 py-3 rounded-b-2xl z-10">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-around items-center text-white">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold">27</h3>
+              <p className="text-sm">Years of Experience</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-3xl font-bold">100+</h3>
+              <p className="text-sm">Gastroenterologist </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-3xl font-bold">1M+</h3>
+              <p className="text-sm">Active Patients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,8 @@
 "use client";
-
 import { about } from "@/app/utils/data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "motion/react";
+import { aboutVariants } from "../motion";
 
 const Content = ({ items }: { items: typeof about }) => {
   return (
@@ -53,25 +54,33 @@ const About = ({ useWhileInView }: any) => {
   const firstCategory = Object.keys(categories)[0];
 
   return (
-    <Tabs defaultValue={firstCategory} className="">
-      <TabsList className="w-full h-auto flex flex-wrap gap-2 p-2 bg-[#356BBB] rounded-lg">
-        {Object.keys(categories).map((category) => (
-          <TabsTrigger
-            key={category}
-            value={category}
-            className="flex-1 min-w-[120px] data-[state=active]:bg-[#F7F3ED] data-[state=active]:text-slate-900 text-white text-lg"
-          >
-            {category}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+    <motion.div
+      variants={aboutVariants}
+      initial="hidden"
+      {...(useWhileInView
+        ? { whileInView: "visible", viewport: { once: true, amount: 0.4 } }
+        : { animate: "visible" })}
+    >
+      <Tabs defaultValue={firstCategory} className="relative z-10">
+        <TabsList className="w-full h-auto flex flex-wrap gap-2 p-2 bg-gradient-to-r from-[#356BBB] to-blue-400 rounded-lg">
+          {Object.keys(categories).map((category) => (
+            <TabsTrigger
+              key={category}
+              value={category}
+              className="flex-1 min-w-[120px] data-[state=active]:bg-[#F7F3ED] data-[state=active]:text-slate-900 text-white text-lg"
+            >
+              {category}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-      {Object.entries(categories).map(([category, items]) => (
-        <TabsContent key={category} value={category} className="">
-          <Content items={items} />
-        </TabsContent>
-      ))}
-    </Tabs>
+        {Object.entries(categories).map(([category, items]) => (
+          <TabsContent key={category} value={category} className="">
+            <Content items={items} />
+          </TabsContent>
+        ))}
+      </Tabs>
+    </motion.div>
   );
 };
 

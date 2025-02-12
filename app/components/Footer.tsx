@@ -10,7 +10,7 @@ const Footer = () => {
       //   variants={footerVariants}
       //   initial="hidden"
       //   animate="visible"
-      className="bg-[#356BBB]   text-gray-200"
+      className="bg-gradient-to-r from-orange-400 to-blue-500 text-gray-200"
     >
       <div className="max-w-6xl mx-auto px-4 py-10 md:py-12 text-center md:text-left">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">

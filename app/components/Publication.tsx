@@ -1,12 +1,12 @@
 "use client";
 import { Download, FileText, X } from "lucide-react";
-// import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-// import { publicationVariants } from "../motion";
-// import "@react-pdf-viewer/core/lib/styles/index.css";
+import { publicationVariants } from "../motion";
 
 import { journals } from "@/app/utils/data";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Publication = ({ useWhileInView }: any) => {
@@ -22,12 +22,12 @@ const Publication = ({ useWhileInView }: any) => {
     }
   }, [selectedPdf]);
   return (
-    <div
-      // variants={publicationVariants}
-      // initial="hidden"
-      // {...(useWhileInView
-      //   ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
-      //   : { animate: "visible" })}
+    <motion.div
+      variants={publicationVariants}
+      initial="hidden"
+      {...(useWhileInView
+        ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
+        : { animate: "visible" })}
       className="space-y-4 "
     >
       {journals.map((journal) => (
@@ -72,14 +72,14 @@ const Publication = ({ useWhileInView }: any) => {
               <X className="w-6 h-6" />
             </button>
             <div className="p-4 h-[80vh]">
-              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                 <Viewer fileUrl={pdfUrl} />
               </Worker>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

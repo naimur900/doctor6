@@ -8,10 +8,10 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { HomeIcon } from "lucide-react";
-// import { motion } from "motion/react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { breadCrumVariants } from "../motion";
+import { breadCrumVariants } from "../motion";
 
 const BreadCrum = () => {
   const pathname = usePathname();
@@ -34,11 +34,11 @@ const BreadCrum = () => {
   //     );
   //   }
   return (
-    <div
-      //   variants={breadCrumVariants}
-      //   initial="hidden"
-      //   animate="visible"
-      className="container mx-auto px-10 sm:px-20 lg:px-32 xl:px-40 py-8 md:py-10"
+    <motion.div
+      variants={breadCrumVariants}
+      initial="hidden"
+      animate="visible"
+      className="container mx-auto px-10 sm:px-20 lg:px-32 xl:px-40 my-8 md:my-10"
     >
       <Breadcrumb>
         <BreadcrumbList className="text-3xl">
@@ -55,7 +55,7 @@ const BreadCrum = () => {
             return (
               <BreadcrumbItem className="" key={path}>
                 {isLast ? (
-                  <BreadcrumbPage className="text-blue-700 font-bold capitalize">
+                  <BreadcrumbPage className="text-blue-700 font-bold">
                     {path.toLowerCase()}
                   </BreadcrumbPage>
                 ) : (
@@ -70,7 +70,7 @@ const BreadCrum = () => {
           })}
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
+    </motion.div>
   );
 };
 

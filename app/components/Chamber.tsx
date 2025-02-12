@@ -1,24 +1,33 @@
 "use client";
 import { chambers } from "@/app/utils/data";
 import { Card } from "@/components/ui/card";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { FaHourglass, FaPhone } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { chamberVariants } from "../motion";
 import ShowMoreButton from "./ShowMoreButton";
 
 const Chamber = ({ useWhileInView }: any) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-7">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-7"
+      variants={chamberVariants}
+      initial="hidden"
+      {...(useWhileInView
+        ? { whileInView: "visible", viewport: { once: true, amount: 0.2 } }
+        : { animate: "visible" })}
+    >
       {chambers.map((chamber, index) => (
         <Card
           key={index}
-          className="overflow-hidden bg-[#F7F3ED] rounded-3xl transform transition-transform duration-300 hover:scale-105"
+          className="overflow-hidden bg-blue-200 rounded-3xl transform transition-transform duration-300 hover:scale-105"
         >
           <div className="p-6 flex flex-col h-full gap-4">
-            <div className="bg-blue-100 rounded-xl h-full p-5">
+            <div className="bg-[#F7F3ED] rounded-xl h-full p-5">
               <div className="mb-4">
                 <span className="px-4 py-1 text-sm font-medium text-white bg-green-500 rounded-full">
-                  Valuable
+                  Active
                 </span>
               </div>
 
@@ -58,7 +67,7 @@ const Chamber = ({ useWhileInView }: any) => {
           </div>
         </Card>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,18 +1,27 @@
 "use client";
 import { Card } from "@/components/ui/card";
+import { motion } from "motion/react";
 import Image from "next/image";
+import { serviceVariants } from "../motion";
 import { services } from "../utils/data";
+
 import ShowMoreButton from "./ShowMoreButton";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
   return (
-    <div className="">
+    <motion.div
+      variants={serviceVariants}
+      initial="hidden"
+      {...(useWhileInView
+        ? { whileInView: "visible", viewport: { once: true, amount: 0.2 } }
+        : { animate: "visible" })}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.slice(0, numberOfServices).map((service, index) => (
           <Card
             key={index}
-            className="overflow-hidden bg-blue-100 rounded-3xl transform transition-transform duration-300 hover:scale-105"
+            className="overflow-hidden bg-blue-200 rounded-3xl shadow-xl transform transition-transform duration-300 hover:scale-105"
           >
             <div className="p-5 flex flex-col h-full gap-4">
               <div className="bg-[#F7F3ED] p-3 rounded-xl h-full">
@@ -46,7 +55,7 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
           <ShowMoreButton matchDirectory={"/services"} text={"More..."} />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

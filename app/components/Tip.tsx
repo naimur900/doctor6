@@ -1,17 +1,17 @@
-// "use client";
+"use client";
 
 import { tips } from "@/app/utils/data";
-// import { motion } from "motion/react";
-// import { aboutCardVariants } from "../motion";
+import { motion } from "motion/react";
+import { aboutCardVariants } from "../motion";
 
 const Advice = () => {
   return (
-    <div
-      className="bg-blue-100 rounded-lg shadow-lg"
-      //   variants={aboutCardVariants}
-      //   initial="hidden"
-      //   whileInView="visible"
-      //   viewport={{ amount: 0.7 }}
+    <motion.div
+      className="bg-[#F7F3ED] rounded-3xl shadow-lg relative z-10"
+      variants={aboutCardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.7 }}
     >
       <ul className="flex flex-col justify-start gap-5 px-6 py-10">
         {tips.map((tip, index) => (
@@ -25,7 +25,7 @@ const Advice = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

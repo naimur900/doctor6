@@ -1,12 +1,19 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { FaHourglass, FaPhone } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { chamberVariants } from "../motion";
 
 const ChamberInfo = ({ chamber }: any) => {
   return (
-    <div>
+    <motion.div
+      className="relative z-10"
+      variants={chamberVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <Card className="flex flex-col gap-5 md:flex-row shadow-xl p-6 bg-blue-100">
         <div className="md:w-5/12 flex flex-col items-center gap-4">
           <div className="w-full aspect-[4/3] relative">
@@ -72,7 +79,7 @@ const ChamberInfo = ({ chamber }: any) => {
           ></iframe>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 

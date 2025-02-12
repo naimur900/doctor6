@@ -27,20 +27,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className="py-4 bg-[#356BBB] shadow-lg"
+      className="py-4 bg-gradient-to-r from-blue-500 to-orange-400  shadow-lg top-0 sticky z-50"
       //   variants={aboutVariants}
       //   initial="hidden"
       //   animate="visible"
     >
-      <div className="mx-auto px-4 md:max-w-3xl md:px-8 lg:max-w-6xl z-50 text-gray-200">
+      <div className="mx-auto px-4 md:max-w-3xl md:px-8 lg:max-w-6xl z-50 text-gray-100 drop-shadow-xl">
         <div className="flex justify-between items-center pb-3 md:pb-0">
           <Link href={"/"}>
             <div className="flex items-center space-x-4">
               <Avatar>
-                <AvatarImage
-                  src={introInfo.imgAvatarUrl}
-                  alt={introInfo.nameEng}
-                />
+                <AvatarImage src={introInfo.imgURL} alt={introInfo.nameEng} />
                 <AvatarFallback>
                   <FaUser />
                 </AvatarFallback>
@@ -51,7 +48,7 @@ export default function Navbar() {
 
           {/* Animated Hamburger menu for mobile */}
           <button
-            className="md:hidden text-gray-200 focus:outline-none"
+            className="md:hidden text-gray-100 focus:outline-none"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
@@ -99,7 +96,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop menu */}
-          <ul className="hidden md:flex gap-4 items-center">
+          <ul className="hidden md:flex gap-4 items-center font-semibold ">
             {navItems.map(({ id, label }) => (
               <li key={label}>
                 <Link
