@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         {/* my-10 md:my-12  */}
 
-        <div className="pb-20">
+        <div className="pb-16">
           <Wrapper>
             <Headingtitle
               icon={<MdHomeRepairService className="text-blue-700" />}
@@ -52,7 +52,7 @@ export default function Home() {
             <About useWhileInView={true} />
           </Wrapper>
         </div>
-        <div className="pb-20">
+        <div className="pb-16">
           <Wrapper>
             <Headingtitle
               icon={<FaHospitalAlt className="text-blue-700" />}
@@ -64,29 +64,31 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pattern pattern-opacity-increase bg-dot-pattern bg-gradient-to-b from-[#F7F3ED] to-blue-100">
-        <Wrapper>
-          <Headingtitle
-            icon={<SiGooglescholar className="text-blue-700" />}
-            title={"Journals / Publications"}
-            colorClass={"text-blue-700"}
-          />
-          <Publication useWhileInView={true} />
-        </Wrapper>
-      </div>
-
-      <div className="pattern pattern-opacity-decrease bg-dot-pattern bg-gradient-to-b from-blue-100 to-[#F7F3ED]">
-        <div className="pb-20">
+      <div className="pattern pattern-opacity-increase bg-dot-pattern bg-gradient-to-b from-[#F7F3ED] to-blue-100 pb-16">
+        <div>
           <Wrapper>
             <Headingtitle
               icon={<SiGooglescholar className="text-blue-700" />}
-              title={"Tips for Skin Care"}
+              title={"Journals / Publications"}
+              colorClass={"text-blue-700"}
+            />
+            <Publication useWhileInView={true} />
+          </Wrapper>
+        </div>
+      </div>
+
+      <div className="pattern pattern-opacity-decrease bg-dot-pattern bg-gradient-to-b from-blue-100 to-[#F7F3ED]">
+        <div className="pb-16">
+          <Wrapper>
+            <Headingtitle
+              icon={<SiGooglescholar className="text-blue-700" />}
+              title={"Tips"}
               colorClass={"text-blue-700"}
             />
             <Tip />
           </Wrapper>
         </div>
-        <div className="pb-20">
+        <div className="pb-28">
           <Wrapper>
             <Headingtitle
               icon={<MdOutlineRateReview className="text-blue-700" />}

@@ -266,12 +266,13 @@ import {
     name: "ব্রিগেডিয়ার জেনারেল অধ্যাপক (ডাঃ) মোঃ মখলেছুর রহমান",
     nameEng: "Prof. Dr. Brig. Gen. Md. Mokhlesur Rahman",
     headline: "এমবিবিএস (বিসিএস স্বাস্থ্য), এমডি (চর্ম ও যৌন রোগ)",
+    shortName: "Prof. Md. Mokhlesur Rahman",
     desgnation: "অধ্যাপক, চর্ম ও যৌন রোগ বিভাগ",
     place: " ঢাকা মেডিকেল কলেজ হাসপাতাল, ঢাকা।",
     description2:
       "প্রফেসর ডা. মাসুদা খাতুন একজন প্রখ্যাত চর্মরোগ বিশেষজ্ঞ। তিনি এমবিবিএস এবং এমডি (ডার্মাটোলজি) ডিগ্রিধারী। বর্তমানে তিনি ঢাকা মেডিকেল কলেজ ও হাসপাতালের চর্মরোগ ও যৌনরোগ বিভাগের অধ্যাপক হিসেবে কর্মরত।",
     imgURL: "/images/doctorIntroPic.webp",
-    imgAvatarUrl: "/images/doctorIntroPic-2.webp",
+    imgAvatarUrl: "/images/doctorIntroPic.webp",
   };
   
   export const navItems = [

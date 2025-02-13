@@ -10,7 +10,7 @@ const Content = ({ items }: { items: typeof about }) => {
       {items.map((info, index) => (
         <li key={index}>
           <div
-            className={`bg-[#F7F3ED] my-4 md:my-1 md:text-${info.titlePos} p-5 shadow-xl rounded-2xl`}
+            className={`bg-[#F7F3ED] md:text-${info.titlePos} p-5 drop-shadow-xl rounded-2xl`}
           >
             <time className="text-base md:text-lg font-semibold text-red-600">
               {info.title}
@@ -50,7 +50,6 @@ const About = ({ useWhileInView }: any) => {
     ),
   };
 
-  // Get the first category key
   const firstCategory = Object.keys(categories)[0];
 
   return (

@@ -9,7 +9,6 @@ interface HeadingTitleProps {
   colorClass?: string;
 }
 
-// bg-gradient-to-r from-[#356BBB] to-blue-200 shadow-lg rounded-2xl
 const Headingtitle = ({
   icon,
   title,

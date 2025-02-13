@@ -8,7 +8,7 @@ import { introInfo } from "../utils/data";
 const Intro = () => {
   return (
     <motion.div
-      className="relative overflow-hidden z-10 bg-orange-100 rounded-2xl drop-shadow-xl mb-7"
+      className="relative overflow-hidden z-10 bg-orange-100 rounded-2xl drop-shadow-xl"
       variants={introVariants}
       id="intro"
       initial="hidden"
@@ -51,7 +51,7 @@ const Intro = () => {
       </div>
       {/* bg-[#356BBB] */}
       {/* Stats */}
-      <div className="bg-gradient-to-r from-orange-400 to-blue-400 py-3 rounded-b-2xl z-10">
+      <div className="bg-gradient-to-r from-orange-400 to-blue-400 py-3 rounded-b-2x">
         <div className="container mx-auto px-4">
           <div className="flex justify-around items-center text-white">
             <div className="text-center">

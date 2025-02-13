@@ -1,4 +1,10 @@
 "use client";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Download, FileText, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -12,6 +18,7 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 const Publication = ({ useWhileInView }: any) => {
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+  const [openItem, setOpenItem] = useState<string | null>(null); // Track open accordion item
 
   useEffect(() => {
     if (selectedPdf) {
@@ -21,6 +28,7 @@ const Publication = ({ useWhileInView }: any) => {
       setPdfUrl(null);
     }
   }, [selectedPdf]);
+
   return (
     <motion.div
       variants={publicationVariants}
@@ -28,40 +36,46 @@ const Publication = ({ useWhileInView }: any) => {
       {...(useWhileInView
         ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
         : { animate: "visible" })}
-      className="space-y-4 "
+      className="space-y-4 relative z-10 pb-2"
     >
-      {journals.map((journal) => (
-        <div
-          key={journal.id}
-          className="collapse collapse-arrow bg-white shadow-md rounded-lg"
-        >
-          <input type="radio" name="my-accordion-2" defaultChecked />
-          <div className="collapse-title text-lg font-semibold text-red-700">
-            {journal.title}
-          </div>
-          <div className="collapse-content">
-            <p className="italic text-sm">Published: {journal.date}</p>
-            <p className="font-extralight">{journal.abstract}</p>
-          </div>
-          <div className="p-4 flex gap-4">
-            <button
-              onClick={() => setSelectedPdf(journal.pdfUrl)}
-              className="inline-flex items-center text-blue-500 hover:text-blue-700"
-            >
-              <FileText className="w-4 h-4 mr-2" />
-              Preview PDF
-            </button>
-            <a
-              href={journal.pdfUrl}
-              download
-              className="inline-flex items-center text-green-500 hover:text-green-700"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download PDF
-            </a>
-          </div>
-        </div>
-      ))}
+      {/* Controlled Accordion */}
+      <Accordion
+        type="single"
+        collapsible
+        value={openItem ?? undefined}
+        onValueChange={(value) => setOpenItem(value)}
+        className="drop-shadow-xl rounded-2xl bg-[#F7F3ED] p-6"
+      >
+        {journals.map((journal) => (
+          <AccordionItem key={journal.id} value={journal.id}>
+            <AccordionTrigger className="text-lg">
+              {journal.title}
+            </AccordionTrigger>
+            <AccordionContent className="text-base">
+              <p>{journal.abstract}</p>
+              <p>{journal.date}</p>
+              <div className="py-4 flex gap-4">
+                <button
+                  onClick={() => setSelectedPdf(journal.pdfUrl)}
+                  className="inline-flex items-center text-blue-500 hover:text-blue-700"
+                >
+                  <FileText className="w-4 h-4 mr-2" />
+                  Preview PDF
+                </button>
+                <a
+                  href={journal.pdfUrl}
+                  download
+                  className="inline-flex items-center text-green-500 hover:text-green-700"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download PDF
+                </a>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+
       {pdfUrl && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-auto relative">
@@ -72,7 +86,7 @@ const Publication = ({ useWhileInView }: any) => {
               <X className="w-6 h-6" />
             </button>
             <div className="p-4 h-[80vh]">
-              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
                 <Viewer fileUrl={pdfUrl} />
               </Worker>
             </div>

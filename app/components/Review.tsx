@@ -27,10 +27,10 @@ const Review = ({ useWhileInView }: any) => {
       {...(useWhileInView
         ? { whileInView: "visible", viewport: { once: true, amount: 0.6 } }
         : { animate: "visible" })}
-      className="space-y-4 pb-5"
+      className="space-y-4"
     >
       <Carousel
-        className="border p-12 rounded-3xl bg-[#F7F3ED] shadow-lg"
+        className="border p-12 rounded-3xl bg-[#F7F3ED] drop-shadow-xl"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}

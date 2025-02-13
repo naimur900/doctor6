@@ -10,7 +10,7 @@ const ShowMoreButton = ({ matchDirectory, text }: any) => {
     <>
       {pathname != matchDirectory && (
         <Link href={matchDirectory} passHref className="relative z-10">
-          <button className="bg-orange-600 hover:bg-red-400 text-white w-20 p-2 rounded-lg font-semibold text-center my-5">
+          <button className="bg-orange-400 hover:bg-orange-300 text-orange-900 w-30 p-2 rounded-lg font-semibold text-center my-5">
             {text}
           </button>
         </Link>

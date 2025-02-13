@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { serviceVariants } from "../motion";
 import { services } from "../utils/data";
-
 import ShowMoreButton from "./ShowMoreButton";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,7 +20,7 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
         {services.slice(0, numberOfServices).map((service, index) => (
           <Card
             key={index}
-            className="overflow-hidden bg-blue-200 rounded-3xl shadow-xl transform transition-transform duration-300 hover:scale-105"
+            className="overflow-hidden bg-blue-200 rounded-3xl drop-shadow-xl transform transition-transform duration-300 hover:scale-105"
           >
             <div className="p-5 flex flex-col h-full gap-4">
               <div className="bg-[#F7F3ED] p-3 rounded-xl h-full">
@@ -51,8 +50,8 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
         ))}
       </div>
       {showMore && (
-        <div className="mt-6">
-          <ShowMoreButton matchDirectory={"/services"} text={"More..."} />
+        <div>
+          <ShowMoreButton matchDirectory={"/services"} text={"More Services"} />
         </div>
       )}
     </motion.div>

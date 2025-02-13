@@ -14,18 +14,18 @@ const ChamberInfo = ({ chamber }: any) => {
       initial="hidden"
       animate="visible"
     >
-      <Card className="flex flex-col gap-5 md:flex-row shadow-xl p-6 bg-blue-100">
+      <Card className="flex flex-col gap-5 md:flex-row drop-shadow-xl p-6 bg-blue-100">
         <div className="md:w-5/12 flex flex-col items-center gap-4">
           <div className="w-full aspect-[4/3] relative">
             <Image
               src={chamber?.imgURL || "/placeholder.svg"}
               alt={"hospital"}
               fill
-              className="rounded-lg shadow-lg object-cover"
+              className="rounded-lg drop-shadow-xl object-cover"
             />
           </div>
 
-          <div className="bg-[#F7F3ED] rounded-xl w-full">
+          <div className="bg-[#F7F3ED] rounded-xl w-full drop-shadow-xl">
             <CardHeader>
               <CardTitle className="font-semibold text-lg text-red-600">
                 {chamber?.name}
@@ -72,7 +72,7 @@ const ChamberInfo = ({ chamber }: any) => {
               left: 0,
               objectFit: "cover",
             }}
-            className="shadow-xl rounded-lg"
+            className="drop-shadow-xl rounded-lg"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
