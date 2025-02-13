@@ -44,7 +44,7 @@ const Publication = ({ useWhileInView }: any) => {
         collapsible
         value={openItem ?? undefined}
         onValueChange={(value) => setOpenItem(value)}
-        className="drop-shadow-xl rounded-2xl bg-[#F7F3ED] p-6"
+        className="drop-shadow-xl rounded-2xl bg-[#eeeae8] p-6"
       >
         {journals.map((journal) => (
           <AccordionItem key={journal.id} value={journal.id}>

@@ -7,7 +7,7 @@ import { aboutCardVariants } from "../motion";
 const Advice = () => {
   return (
     <motion.div
-      className="bg-[#F7F3ED] rounded-3xl drop-shadow-xl relative z-10"
+      className="bg-[#eeeae8] rounded-3xl drop-shadow-xl relative z-10"
       variants={aboutCardVariants}
       initial="hidden"
       whileInView="visible"

@@ -8,7 +8,7 @@ import Chamber from "../components/Chamber";
 
 const page = () => {
   return (
-    <div className="min-h-screen pattern pattern-opacity-increase bg-dot-pattern bg-gradient-to-b from-[#F7F3ED] to-blue-100">
+    <div className="min-h-screen pattern pattern-opacity-increase bg-dot-pattern">
       <BreadCrum />
       <main
         className={`container pb-24 mx-auto px-10 sm:px-20 lg:px-32 xl:px-40 bg-opacity-5`}

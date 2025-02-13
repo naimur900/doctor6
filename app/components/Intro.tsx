@@ -8,7 +8,7 @@ import { introInfo } from "../utils/data";
 const Intro = () => {
   return (
     <motion.div
-      className="relative overflow-hidden z-10 bg-orange-100 rounded-2xl drop-shadow-xl"
+      className="relative overflow-hidden z-10 bg-[#eeeae8] rounded-2xl drop-shadow-xl"
       variants={introVariants}
       id="intro"
       initial="hidden"
@@ -51,20 +51,20 @@ const Intro = () => {
       </div>
       {/* bg-[#356BBB] */}
       {/* Stats */}
-      <div className="bg-gradient-to-r from-orange-400 to-blue-400 py-3 rounded-b-2x">
+      <div className="bg-gradient-to-r from-[#3E5879] to-blue-400 py-3 rounded-b-2x">
         <div className="container mx-auto px-4">
           <div className="flex justify-around items-center text-white">
             <div className="text-center">
-              <h3 className="text-3xl font-bold">27</h3>
-              <p className="text-sm">Years of Experience</p>
+              <h3 className="text-xl md:text-3xl font-bold">27</h3>
+              <p className="md:text-sm">Years of Experience</p>
             </div>
+            {/* <div className="text-center">
+              <h3 className="text-xl md:text-3xl font-bold">100+</h3>
+              <p className="md:text-sm">Gastroenterologist </p>
+            </div> */}
             <div className="text-center">
-              <h3 className="text-3xl font-bold">100+</h3>
-              <p className="text-sm">Gastroenterologist </p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-3xl font-bold">1M+</h3>
-              <p className="text-sm">Active Patients</p>
+              <h3 className="text-xl md:text-3xl font-bold">100k</h3>
+              <p className="md:text-sm">Active Patients</p>
             </div>
           </div>
         </div>

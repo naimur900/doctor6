@@ -30,7 +30,7 @@ const Review = ({ useWhileInView }: any) => {
       className="space-y-4"
     >
       <Carousel
-        className="border p-12 rounded-3xl bg-[#F7F3ED] drop-shadow-xl"
+        className="border p-12 rounded-3xl bg-[#eeeae8] drop-shadow-xl"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}

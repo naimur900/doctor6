@@ -17,7 +17,7 @@ import Wrapper from "./components/Wrapper";
 export default function Home() {
   return (
     <main>
-      <div className="pattern pattern-opacity-increase bg-dot-pattern bg-gradient-to-b from-[#F7F3ED] to-blue-100">
+      <div className="pattern pattern-opacity-increase bg-dot-pattern">
         <div className="py-10 md:py-12 ">
           <Wrapper>
             <Intro />
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pattern pattern-opacity-decrease bg-dot-pattern bg-gradient-to-b from-blue-100 to-[#F7F3ED]">
+      <div className="pattern pattern-opacity-decrease bg-dot-pattern ">
         <div className="pb-16">
           <Wrapper>
             <Headingtitle
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pattern pattern-opacity-increase bg-dot-pattern bg-gradient-to-b from-[#F7F3ED] to-blue-100 pb-16">
+      <div className="pattern pattern-opacity-increase bg-dot-pattern pb-16">
         <div>
           <Wrapper>
             <Headingtitle
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pattern pattern-opacity-decrease bg-dot-pattern bg-gradient-to-b from-blue-100 to-[#F7F3ED]">
+      <div className="pattern pattern-opacity-decrease bg-dot-pattern ">
         <div className="pb-16">
           <Wrapper>
             <Headingtitle

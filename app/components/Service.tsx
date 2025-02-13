@@ -20,12 +20,12 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
         {services.slice(0, numberOfServices).map((service, index) => (
           <Card
             key={index}
-            className="overflow-hidden bg-blue-200 rounded-3xl drop-shadow-xl transform transition-transform duration-300 hover:scale-105"
+            className="overflow-hidden bg-[#eeeae8] rounded-3xl drop-shadow-xl transform transition-transform duration-300 hover:scale-105"
           >
             <div className="p-5 flex flex-col h-full gap-4">
-              <div className="bg-[#F7F3ED] p-3 rounded-xl h-full">
+              <div className="p-3 rounded-xl h-full">
                 <div className="mb-4">
-                  <span className="px-4 py-1 text-sm font-medium text-white bg-green-500 rounded-full">
+                  <span className="px-4 py-1 text-sm font-medium text-white bg-blue-400 rounded-full">
                     Valuable
                   </span>
                 </div>
@@ -42,7 +42,7 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
                   src={service.imgURL || "/placeholder.svg"}
                   alt={service.title}
                   fill
-                  className="rounded-xl object-cover"
+                  className="rounded-xl object-cover border-2 border-solid border-[#213555]"
                 />
               </div>
             </div>

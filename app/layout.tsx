@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`antialiased ${balooDa2.className}`}
+        className={`antialiased ${balooDa2.className} bg-[#213555]`}
       >
         <Navbar />
         {children}

@@ -44,10 +44,10 @@ const BreadCrum = () => {
         <BreadcrumbList className="text-3xl">
           <BreadcrumbItem>
             <Link href={"/"}>
-              <HomeIcon className="h-6 w-6 text-blue-700 font-bold" />
+              <HomeIcon className="h-6 w-6 text-[#eeeae8] font-bold" />
             </Link>
           </BreadcrumbItem>
-          <BreadcrumbSeparator className="text-blue-700 font-extrabold" />
+          <BreadcrumbSeparator className="text-[#eeeae8] font-extrabold" />
           {paths.map((path, index) => {
             const href = `/${paths.slice(0, index + 1).join("/")}`;
             const isLast = index === paths.length - 1;
@@ -55,7 +55,7 @@ const BreadCrum = () => {
             return (
               <BreadcrumbItem className="" key={path}>
                 {isLast ? (
-                  <BreadcrumbPage className="text-blue-700 font-bold">
+                  <BreadcrumbPage className="text-[#eeeae8] font-bold">
                     {path.toLowerCase()}
                   </BreadcrumbPage>
                 ) : (

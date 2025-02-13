@@ -10,7 +10,7 @@ const Footer = () => {
       //   variants={footerVariants}
       //   initial="hidden"
       //   animate="visible"
-      className="bg-gradient-to-r from-orange-400 to-blue-500 text-gray-50"
+      className="bg-gradient-to-l from-[#eeeae8] to-[#cddae4] text-gray-800"
     >
       <div className="max-w-6xl mx-auto px-4 py-10 md:py-12 text-center md:text-left font-medium">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
@@ -20,8 +20,8 @@ const Footer = () => {
             <p className="mb-2">
               House# 48, Road# 9A, Dhanmondi R/A, 28, Dhaka 1209
             </p>
-            <p className="mb-2">Phone: 09611530530</p>
-            <p>Email: info@drmasudakhatun.com</p>
+            <p className="mb-2">Phone: 48115270-2, 48114040-1</p>
+            <p>Email: info@drmokhlesurrahman.com</p>
           </div>
 
           {/* Quick Links */}
@@ -31,7 +31,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-blue-300 transition-colors"
+                  className="hover:text-gray-400 transition-colors"
                 >
                   About Us
                 </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-blue-300 transition-colors"
+                  className="hover:text-gray-400 transition-colors"
                 >
                   Services
                 </Link>
@@ -47,7 +47,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-blue-300 transition-colors"
+                  className="hover:text-gray-400 transition-colors"
                 >
                   About
                 </Link>
@@ -55,7 +55,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-blue-300 transition-colors"
+                  className="hover:text-gray-400 transition-colors"
                 >
                   Contact
                 </Link>
@@ -103,7 +103,7 @@ const Footer = () => {
           {/* &copy; {new Date().getFullYear()} All Right Reserved - Powered By */}
           &copy; 2025 All Right Reserved - Powered By
           <Link href="https://www.eminencesoftware.com" target="_blank">
-            <p className="text-purple-200 hover:underline">
+            <p className="text-purple-800 hover:underline">
               Eminence Software Limited.
             </p>
           </Link>

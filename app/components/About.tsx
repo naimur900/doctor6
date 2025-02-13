@@ -8,15 +8,15 @@ const Content = ({ items }: { items: typeof about }) => {
   return (
     <ul className="">
       {items.map((info, index) => (
-        <li key={index}>
+        <li key={index} className="">
           <div
-            className={`bg-[#F7F3ED] md:text-${info.titlePos} p-5 drop-shadow-xl rounded-2xl`}
+            className={`bg-[#F7F3ED] md:text-${info.titlePos} p-5 drop-shadow-xl rounded-3xl`}
           >
-            <time className="text-base md:text-lg font-semibold text-red-600">
+            <time className="text-base md:text-xl font-semibold text-red-600">
               {info.title}
             </time>
-            <div className="font-light text-base">
-              <ul className="list-disc pl-6 rounded-2xl">
+            <div className="font-light text-base md:text-lg">
+              <ul className="list-disc pl-6">
                 {info.content.split("\n").map((item, i) => (
                   <li key={i}>{item.trim()}</li>
                 ))}
@@ -61,12 +61,12 @@ const About = ({ useWhileInView }: any) => {
         : { animate: "visible" })}
     >
       <Tabs defaultValue={firstCategory} className="relative z-10">
-        <TabsList className="w-full h-auto flex flex-wrap gap-2 p-2 bg-gradient-to-r from-[#356BBB] to-blue-400 rounded-lg">
+        <TabsList className="w-full h-auto flex flex-wrap gap-2 p-2 bg-gradient-to-r from-[#3E5879] to-blue-400 rounded-2xl">
           {Object.keys(categories).map((category) => (
             <TabsTrigger
               key={category}
               value={category}
-              className="flex-1 min-w-[120px] data-[state=active]:bg-[#F7F3ED] data-[state=active]:text-slate-900 text-white text-lg"
+              className="flex-1 min-w-[120px] data-[state=active]:bg-[#F7F3ED] data-[state=active]:text-slate-900 text-white text-lg md:text-xl rounded-xl"
             >
               {category}
             </TabsTrigger>

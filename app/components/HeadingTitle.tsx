@@ -16,16 +16,16 @@ const Headingtitle = ({
 }: HeadingTitleProps) => {
   return (
     <motion.div
-      className="relative mb-6 py-3 bg-gradient-to-r from-orange-300 to-transparent rounded-xl"
+      className="relative mb-6 py-3"
       variants={breadCrumVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       <div
-        className={`flex items-center justify-start gap-2 text-3xl font-medium `}
+        className={`flex items-center justify-center gap-2 text-3xl md:text-4xl font-bold text-[#eeeae8]`}
       >
-        <div className="bg-orange-600 w-3 h-full"></div>
+        {/* <div className="bg-orange-600 w-3 h-full"></div> */}
 
         {icon}
         <h2>{title}</h2>

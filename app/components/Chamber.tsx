@@ -21,12 +21,12 @@ const Chamber = ({ useWhileInView }: any) => {
       {chambers.map((chamber, index) => (
         <Card
           key={index}
-          className="overflow-hidden bg-blue-200 rounded-3xl transform transition-transform duration-300 hover:scale-105"
+          className="overflow-hidden bg-[#eeeae8] rounded-3xl transform transition-transform duration-300 hover:scale-105"
         >
           <div className="p-6 flex flex-col h-full gap-4">
-            <div className="bg-[#F7F3ED] rounded-xl h-full p-5">
+            <div className="ounded-xl h-full p-5">
               <div className="mb-4">
-                <span className="px-4 py-1 text-sm font-medium text-white bg-green-500 rounded-full">
+                <span className="px-4 py-1 text-sm font-medium text-white bg-blue-400 rounded-full">
                   Active
                 </span>
               </div>
@@ -35,7 +35,7 @@ const Chamber = ({ useWhileInView }: any) => {
                 {chamber.name}
               </h2>
 
-              <div className="space-y-3 text-sm mb-6 flex-grow">
+              <div className="space-y-3 text-base mb-6 flex-grow">
                 <div className="flex items-center gap-2">
                   <FaLocationDot className="text-gray-600 flex-shrink-0" />
                   <p>{chamber.location}</p>
@@ -56,14 +56,16 @@ const Chamber = ({ useWhileInView }: any) => {
                 src={chamber.imgURL || "/placeholder.svg"}
                 alt={chamber.name}
                 fill
-                className="rounded-xl object-cover"
+                className="rounded-xl object-cover border-2 border-solid border-[#213555]"
               />
             </div>
 
-            <ShowMoreButton
-              text={"More..."}
-              matchDirectory={`/${chamber.id}`}
-            />
+            <div className="drop-shadow-xl">
+              <ShowMoreButton
+                text={"More..."}
+                matchDirectory={`/${chamber.id}`}
+              />
+            </div>
           </div>
         </Card>
       ))}

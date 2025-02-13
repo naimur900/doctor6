@@ -27,12 +27,12 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="py-4 bg-gradient-to-r from-blue-500 to-orange-400 drop-shadow-lg top-0 sticky z-50"
+      className="py-4 bg-gradient-to-r from-[#eeeae8] to-[#cddae4] drop-shadow-lg top-0 sticky z-50"
       variants={aboutVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="mx-auto px-4 md:max-w-3xl md:px-8 lg:max-w-6xl z-50 text-gray-50">
+      <div className="mx-auto px-4 md:max-w-3xl md:px-8 lg:max-w-6xl z-50 text-gray-800">
         <div className="flex justify-between items-center pb-3 md:pb-0">
           <Link href={"/"}>
             <div className="flex items-center space-x-4">
@@ -53,7 +53,7 @@ export default function Navbar() {
 
           {/* Animated Hamburger menu for mobile */}
           <button
-            className="md:hidden text-gray-200 focus:outline-none"
+            className="md:hidden text-gray-800 focus:outline-none"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-label="Toggle menu"
@@ -107,7 +107,7 @@ export default function Navbar() {
                 <Link
                   href={id}
                   prefetch={true}
-                  className="flex items-center hover:text-white transition-colors duration-300 font-medium"
+                  className="flex items-center hover:text-gray-400 transition-colors duration-300 font-medium"
                 >
                   {label}
                 </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <motion.li key={label} variants={menuItemVariants}>
                   <Link
                     href={id}
-                    className="flex items-center hover:text-white transition-colors duration-300"
+                    className="flex items-center hover:text-gray-400 transition-colors duration-300"
                     prefetch={true}
                     onClick={() => setIsMenuOpen(false)}
                   >
