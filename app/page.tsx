@@ -30,7 +30,7 @@ export default function Home() {
             <Headingtitle
               icon={<MdHomeRepairService className="text-blue-700" />}
               title={"Services"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <Service
               numberOfServices={3}
@@ -47,7 +47,7 @@ export default function Home() {
             <Headingtitle
               icon={<FcAbout />}
               title={"About"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <About useWhileInView={true} />
           </Wrapper>
@@ -57,7 +57,7 @@ export default function Home() {
             <Headingtitle
               icon={<FaHospitalAlt className="text-blue-700" />}
               title={"Chamber and timing"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <Chamber useWhileInView={true} />
           </Wrapper>
@@ -70,7 +70,7 @@ export default function Home() {
             <Headingtitle
               icon={<SiGooglescholar className="text-blue-700" />}
               title={"Journals / Publications"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <Publication useWhileInView={true} />
           </Wrapper>
@@ -83,7 +83,7 @@ export default function Home() {
             <Headingtitle
               icon={<SiGooglescholar className="text-blue-700" />}
               title={"Tips"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <Tip />
           </Wrapper>
@@ -93,7 +93,7 @@ export default function Home() {
             <Headingtitle
               icon={<MdOutlineRateReview className="text-blue-700" />}
               title={"Reviews"}
-              colorClass={"text-blue-700"}
+              // colorClass={"text-blue-700"}
             />
             <Review useWhileInView={true} />
           </Wrapper>
