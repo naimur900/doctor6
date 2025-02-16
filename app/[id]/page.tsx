@@ -2,17 +2,24 @@ import BreadCrum from "@/app/components/Breadcrum";
 import ChamberInfo from "@/app/components/ChamberInfo";
 import { chambers } from "@/app/utils/data";
 import "../../app/main.css";
-// Generate static paths for all chambers
-export async function generateStaticParams() {
-  return chambers.map((chamber) => ({
-    id: chamber.id,
-  }));
+
+interface PageProps {
+  params: {
+    id: string;
+  };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Page = async ({ params }: any) => {
-  const { id } = await params;
-  console.log(id);
+const Page = async ({ params }: PageProps) => {
+  const { id } = await params; // ✅ Await params before destructuring
+  console.log("Chamber ID:", id);
+
+  // ✅ Ensure id is a string (sometimes it's a number or undefined)
+  if (!id || typeof id !== "string") {
+    console.error("Invalid chamber ID");
+    return (
+      <div className="text-center text-gray-500 py-10">Invalid chamber ID</div>
+    );
+  }
 
   const chamber = chambers.find((chamber) => chamber.id === id);
 

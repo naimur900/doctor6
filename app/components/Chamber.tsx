@@ -8,7 +8,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { chamberVariants } from "../motion";
 import ShowMoreButton from "./ShowMoreButton";
 
-const Chamber = ({ useWhileInView }: any) => {
+interface ChamberProps {
+  useWhileInView?: boolean;
+}
+
+const Chamber: React.FC<ChamberProps> = ({ useWhileInView }) => {
   return (
     <motion.div
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-7"

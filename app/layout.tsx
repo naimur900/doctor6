@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Baloo_Da_2, Geist, Geist_Mono } from "next/font/google";
+import { Baloo_Da_2 } from "next/font/google";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 const balooDa2 = Baloo_Da_2({
   subsets: ["bengali"], // Specify the Bangla subset

@@ -9,11 +9,7 @@ interface HeadingTitleProps {
   colorClass?: string;
 }
 
-const Headingtitle = ({
-  icon,
-  title,
-  colorClass = "text-gray-900",
-}: HeadingTitleProps) => {
+const Headingtitle = ({ icon, title }: HeadingTitleProps) => {
   return (
     <motion.div
       className="relative mb-6 py-3"
