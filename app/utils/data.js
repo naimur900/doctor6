@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
   
   const samplePdfPath = "/pdf/Journal-PDF.pdf";
-  
+
   export const services = [
     {
       title: "মূত্রথলী ক্যান্সার সার্জারি",

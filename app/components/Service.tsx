@@ -39,7 +39,7 @@ const Service = ({ numberOfServices, useWhileInView, showMore }: any) => {
 
               <div className="relative w-full aspect-[16/10] mt-auto">
                 <Image
-                  src={service.imgURL || "/placeholder.svg"}
+                  src={"/images/place-holder-image.png"}
                   alt={service.title}
                   fill
                   className="rounded-xl object-cover border-2 border-solid border-[#213555]"
